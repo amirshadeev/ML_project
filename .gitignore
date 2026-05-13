@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Streamlit cache
+.streamlit/secrets.toml
+
+# ML models (если большие)
+*.pkl
+
+# Dataset
+dataset/
+
+# Docker
+*.tar
+
+# pytest
+.pytest_cache/
+
+# build
+dist/
+build/
+
+# temp
+tmp/
+temp/

@@ -1,31 +1,35 @@
-version: "3.9"
+version: '3.8'
 
 services:
-
   api:
     build:
       context: .
       dockerfile: Dockerfile.api
-    container_name: aqi-api
+    container_name: aqi_api
     ports:
       - "8000:8000"
+    volumes:
+      - ./app:/app/app
+      - ./model:/app/model
     networks:
-      - aqi-net
+      - aqi_network
 
   frontend:
     build:
       context: .
       dockerfile: Dockerfile.frontend
-    container_name: aqi-frontend
+    container_name: aqi_frontend
     ports:
       - "8501:8501"
-    depends_on:
-      - api
     environment:
       - API_URL=http://api:8000
+    depends_on:
+      - api
+    volumes:
+      - ./frontend:/app
     networks:
-      - aqi-net
+      - aqi_network
 
 networks:
-  aqi-net:
+  aqi_network:
     driver: bridge
